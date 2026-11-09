@@ -1,0 +1,61 @@
+{
+  "name": "clawsafe-mcp",
+  "version": "0.2.0",
+  "description": "ClawSafe — open-source Solana MCP server for AI agents: an isolated policy-gated burner wallet with Token-2022 CPI Guard, hard spend limits, x402 paid APIs, payments and swaps. Works with Cline, Cursor and Claude Code.",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": {
+    "clawsafe-mcp": "dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsx src/index.ts",
+    "start": "node dist/index.js",
+    "typecheck": "tsc -p tsconfig.test.json --noEmit",
+    "test": "node --import tsx --test tests/*.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "solana",
+    "mcp",
+    "model-context-protocol",
+    "ai-agent",
+    "burner-wallet",
+    "cpi-guard",
+    "token-2022",
+    "x402",
+    "http-402",
+    "micropayments",
+    "usdc",
+    "jupiter",
+    "clawsafe"
+  ],
+  "license": "Apache-2.0",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "@solana/spl-token": "^0.4.9",
+    "@solana/web3.js": "^1.95.0",
+    "commander": "^12.1.0",
+    "dotenv": "^16.4.7",
+    "zod": "^4.6.7"
+  },
+  "overrides": {
+    "jayson": {
+      "stream-json": "^3.6.0",
+      "uuid": "^11.1.1"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.7.0"
+  }
+}
